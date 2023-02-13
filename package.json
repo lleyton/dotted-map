@@ -1,6 +1,6 @@
 {
   "name": "@lleyton/dotted-map",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Create a SVG map filled with dots for the world or countries",
   "main": "./index.js",
   "exports": {
