@@ -71,6 +71,11 @@ function DottedMapWithoutCountries({ map, avoidOuterPins = false }) {
     }) {
       const getPoint = ({ x, y, svgOptions = {} }) => {
         const pointRadius = svgOptions.radius || radius;
+
+        // If point isn't fully inside the map, don't draw it
+        if (x - pointRadius < 0 || x + pointRadius > width) return '';
+        if (y - pointRadius < 0 || y + pointRadius > height) return '';
+
         if (shape === 'circle') {
           return `<circle cx="${x}" cy="${y}" r="${pointRadius}" fill="${
             svgOptions.color || color
